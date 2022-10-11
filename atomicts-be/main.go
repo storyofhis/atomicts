@@ -57,5 +57,6 @@ func main() {
 	// CREATE
 	// v1.GET("/validator/create-shop", middleware.RequireAuth, createShop.CreateController)
 
+	router.Static("assets", "./assets")
 	router.Run(":8080")
 }
