@@ -9,6 +9,7 @@ import (
 	"github.com/storyofhis/atomicts/atomicts-be/database"
 	"github.com/storyofhis/atomicts/atomicts-be/database/models"
 	"github.com/storyofhis/atomicts/atomicts-be/pkg/controller"
+	"github.com/storyofhis/atomicts/atomicts-be/pkg/controller/createShop"
 	"github.com/storyofhis/atomicts/atomicts-be/pkg/middleware"
 )
 
@@ -34,6 +35,9 @@ func main() {
 	v1.POST("/signup", controller.SignUpController)
 	v1.POST("/login", controller.LoginController)
 	v1.GET("/validate", middleware.RequireAuth, controller.ValidateController)
+
+	// CREATE
+	v1.GET("/validator/create-shop", middleware.RequireAuth, createShop.CreateController)
 
 	router.Run(":8080")
 }
