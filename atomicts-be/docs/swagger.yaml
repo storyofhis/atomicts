@@ -1,0 +1,14 @@
+basePath: /
+host: localhost:8080/v1
+info:
+  contact:
+    email: azizi.maula@gmail.com
+    name: API support
+  description: this is a sample api's for manage atomicts
+  license:
+    name: Apache 2.0
+    url: http://apache.org/licenses/LICENSE-2.0.html
+  title: Documentation API's
+  version: "1.0"
+paths: {}
+swagger: "2.0"

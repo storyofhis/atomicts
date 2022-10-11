@@ -21,6 +21,18 @@ func init() {
 	database.ConnectDB()
 	models.DB.AutoMigrate(&models.User{})
 }
+
+// @title Documentation API's
+// @version 1.0
+// @description this is a sample api's for manage atomicts
+// @termOfService http://swagger.io/terms
+// @contact.name API support
+// @contact.email azizi.maula@gmail.com
+// @license.name Apache 2.0
+// @license.url http://apache.org/licenses/LICENSE-2.0.html
+// @host localhost:8080/v1
+// @BasePath /
+
 func main() {
 	router := gin.Default()
 

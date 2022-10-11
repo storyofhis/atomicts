@@ -1,0 +1,19 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "this is a sample api's for manage atomicts",
+        "title": "Documentation API's",
+        "contact": {
+            "name": "API support",
+            "email": "azizi.maula@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080/v1",
+    "basePath": "/",
+    "paths": {}
+}
