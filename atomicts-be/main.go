@@ -36,8 +36,14 @@ func main() {
 	v1.POST("/login", controller.LoginController)
 	v1.GET("/validate", middleware.RequireAuth, controller.ValidateController)
 
+	// GET USER
+	v1.GET("/validate/user/:id", middleware.RequireAuth, controller.GetUserByID)
+	v1.GET("/validate/users", middleware.RequireAuth, controller.GetAllUser)
+
+	// UPLOAD FILE
+	v1.POST("/validate/upload-file", middleware.RequireAuth, createShop.CreateController)
 	// CREATE
-	v1.GET("/validator/create-shop", middleware.RequireAuth, createShop.CreateController)
+	// v1.GET("/validator/create-shop", middleware.RequireAuth, createShop.CreateController)
 
 	router.Run(":8080")
 }
