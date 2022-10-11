@@ -103,3 +103,37 @@ func ValidateController(c *gin.Context) {
 		"user":   user,
 	})
 }
+
+func GetUserByID (c *gin.Context) {
+	var User models.User
+	id := c.Param("id")
+	if id == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status" : "id cannot be empty",
+		})
+	}
+	err := models.DB.Where("id = ?", id).First(&User).Error
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"status" : "user not found",
+		})
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"status" : "success found",
+		"user" : User,
+	})
+}
+
+func GetAllUser (c *gin.Context) {
+	Users := &[]models.User{}
+	if err := models.DB.Find(Users).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status" : "bad request",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"status" : "success",
+		"users" : Users,
+	})
+}	

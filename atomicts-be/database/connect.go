@@ -17,7 +17,7 @@ func ConnectDB() {
 	db_pass := os.Getenv("DB_PASSWORD")
 	db_name := os.Getenv("DB_NAME")
 	db_sslmode := os.Getenv("DB_SLLMODE")
-
+	
 	var err error
 	dsn := fmt.Sprintf(
 		`user=%s port=%s user=%s password=%s dbname=%s sslmode=%s`,
